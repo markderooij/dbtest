@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-
+use App\Models\Planet;
 class PlanetController extends Controller
 {
     public function index()
     {
-        $planets = DB::table('planets')->get();
+        $planets = Planet::all();
         return view('planets.index', compact('planets'));
     }
 
     public function show($id)
     {
-        $planet = DB::table('planets')->where('id', $id)->get();
+        $planet = Planet::where('id', $id)->first();
         return view('planets.show', compact('planet'));
     }
 }

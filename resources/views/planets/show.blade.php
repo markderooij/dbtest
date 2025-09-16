@@ -7,8 +7,8 @@
 </head>
 <body>
     
-    <h2>{{ $planet[0]->name }}</h2>
-    {{ $planet[0]->description }}
-    {{ $planet[0]->size_in_km }}
+    <h2>{{ $planet->name }}</h2>
+    {{ $planet->description }}
+    {{ $planet->size_in_km }}
 </body>
 </html>
